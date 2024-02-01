@@ -1,0 +1,46 @@
+<!-- en lista_camiones.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Camiones - PESCO
+{% endblock %}
+
+{% block content %}
+  <h2>Lista de Equipos</h2>
+  <a href="{% url 'registrar_camion' %}" class="btn custom-btn">Registrar Nuevo Equipo</a>
+<br><br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th>Kilometraje</th>
+      <th>Estado</th>
+      <th>VIN</th>
+      <th>Flota</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for camion in camiones %}
+      <tr class="{% if camion.estado == 'Disponible' %}table-success{% elif camion.estado == 'Arrendado' %}table-warning{% elif camion.estado == 'En Mantenimiento' %}table-info{% elif camion.estado == 'Siniestrado' %}table-danger{% elif camion.estado == 'En Revisión' %}table-secondary{% endif %}">
+        <td>{{ camion.modelo }}</td>
+        <td>{{ camion.año }}</td>
+        <td>{{ camion.kilometraje }}</td>
+        <td>{{ camion.estado }}</td>
+        <td>{{ camion.vin }}</td>
+        <td>{{ camion.flota }}</td>
+        <td>
+          <!-- Agrega enlaces para ver detalles o editar -->
+          <a href="{% url 'detalles_camion' camion.id %}" class="btn btn-info">Detalles</a>
+          <a href="{% url 'editar_camion' camion.id %}" class="btn btn-warning">Editar</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+  <!-- Agrega el botón para registrar un nuevo camión -->
+
+{% endblock %}

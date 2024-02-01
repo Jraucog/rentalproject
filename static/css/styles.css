@@ -1,0 +1,103 @@
+/* Define tus colores como variables CSS para un fácil mantenimiento */
+:root {
+  --primary-color: #00A8E2;
+  --secondary-color: #54565A;
+  --text-color: #FFFEFEFE;
+  --background-color: #FFFEFEFE;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+  background-color: var(--background-color); /* Utiliza la variable definida en :root */
+}
+
+/* Estilos para el logo en la barra de navegación */
+.navbar-brand {
+  text-align: left;
+}
+
+#logo {
+  max-height: 80px;
+}
+
+/* Personalización de la barra de navegación */
+.navbar-custom {
+  background-color: var(--primary-color);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--text-color);
+}
+
+.navbar-custom .navbar-nav .active>.nav-link,
+.navbar-custom .navbar-nav .nav-link.active,
+.navbar-custom .navbar-nav .nav-link.show,
+.navbar-custom .navbar-nav .show>.nav-link {
+  color: rgba(255, 255, 255, .9);
+}
+
+/* Asegúrate de que el menú de navegación se expande correctamente en pantallas pequeñas */
+.offcanvas-collapse {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .offcanvas-collapse {
+    width: calc(100% - 3.5em);
+  }
+}
+
+/* Define los estilos para el modo oscuro */
+.dark-mode {
+  --primary-color: #333;
+  --secondary-color: #555;
+  --text-color: #FFFEFEFE;
+  --background-color: #111;
+}
+
+/* Personaliza el interruptor de modo oscuro */
+.form-check.form-switch {
+  margin-left: 10px; /* Ajusta el margen izquierdo según sea necesario */
+}
+
+.form-check.form-switch label {
+  color: var(--text-color) !important; /* Usa el color de texto original para que coincida con el resto de la barra de navegación */
+}
+
+.form-check.form-switch input:checked + label::before {
+  background-color: var(--primary-color) !important; /* Usa el color primario cuando el interruptor esté activado */
+  border-color: var(--primary-color) !important; /* Cambia el color del borde cuando el interruptor esté activado */
+}
+
+/* Asegúrate de que el fondo del switch se coloree correctamente cuando está activado */
+.form-check.form-switch input:checked + label::after {
+  background-color: var(--primary-color) !important;
+}
+
+/* Estilos para el contenido del footer */
+.footer {
+  background-color: var(--primary-color); /* Color de fondo del footer */
+  color: var(--text-color); /* Color del texto en el footer */
+  padding: 20px 0; /* Ajusta el relleno según tus necesidades */
+  text-align: center;
+  position: fixed; /* Posición fija para que se mantenga en la parte inferior */
+  width: 100%;
+  bottom: 0; /* Ancla el footer en la parte inferior de la página */
+}
+/* Estilos generales para h2 */
+h2 {
+  color: var(--text-color-dark);
+}
+
+/* Estilos específicos para h2 en modo oscuro */
+.dark-mode h2 {
+  color: var(--text-color); /* Puedes definir un color diferente para modo oscuro */
+}
+.custom-btn {
+  background-color: var(--primary-color);
+  /* O cualquier otra propiedad de estilo que desees agregar */
+}
