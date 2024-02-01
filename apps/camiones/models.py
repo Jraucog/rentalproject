@@ -15,7 +15,6 @@ class Camion(models.Model):
         ('SUPERSUCKER', 'SUPERSUCKER'),
         # Agrega más opciones según sea necesario
     ]
-
     # Datos para el camión
     centro_costo = models.IntegerField(verbose_name='Centro De Costo', null=True)
     año = models.PositiveIntegerField(verbose_name='Año')
@@ -33,12 +32,8 @@ class Camion(models.Model):
     modelo = models.CharField(max_length=100, verbose_name='Modelo')
     vin = models.CharField(max_length=255, verbose_name='VIN')
     kilometraje = models.PositiveIntegerField(verbose_name='Kilometraje')
-
-    # Información opcional
     descripcion = models.CharField(max_length=255, verbose_name='Descripción', blank=True)
     numero_motor = models.IntegerField(verbose_name='Número De Motor', null=True, blank=True)
-
-    # Información de flota
     flota = models.CharField(max_length=50, choices=FLOTA_CHOICES, verbose_name='Flota', default='none')
 
     def __str__(self):

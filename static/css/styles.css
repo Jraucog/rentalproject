@@ -88,16 +88,31 @@ body {
   width: 100%;
   bottom: 0; /* Ancla el footer en la parte inferior de la página */
 }
+
 /* Estilos generales para h2 */
 h2 {
-  color: var(--text-color-dark);
+  color: var(--text-color);
 }
 
 /* Estilos específicos para h2 en modo oscuro */
 .dark-mode h2 {
   color: var(--text-color); /* Puedes definir un color diferente para modo oscuro */
 }
+
+/* Estilos para el botón personalizado */
 .custom-btn {
   background-color: var(--primary-color);
-  /* O cualquier otra propiedad de estilo que desees agregar */
+  color: #FFFEFEFE !important; /* Establece el color directamente */
+}
+/* styles.css */
+.details-header {
+  cursor: pointer;
+}
+
+.details-header:hover {
+  background-color: #e6e6e6;
+}
+
+.toggle-details {
+  margin-left: 10px;
 }
