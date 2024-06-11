@@ -6,7 +6,14 @@ from .models import Camion, Mantenimiento
 # Listado de camiones
 def lista_camiones(request):
     camiones = Camion.objects.all()
-    return render(request, 'camiones/lista_camiones.html', {'camiones': camiones})
+    fields = ['ppu', 'modelo', 'año', 'kilometraje', 'estado', 'vin', 'flota']
+
+    for field in fields:
+        value = request.GET.get(field)
+        if value:
+            camiones = camiones.filter(**{f'{field}__icontains': value})
+
+    return render(request, 'camiones/lista_camiones.html', {'camiones': camiones, 'fields': fields})
 
 # Registro de camión
 def registrar_camion(request):

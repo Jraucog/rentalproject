@@ -12,7 +12,28 @@
     <a href="{% url 'registrar_camion' %}" class="btn custom-btn">Registrar Nuevo Equipo</a>
     
     <br><br>
-
+    <form method="GET" action="">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filtrar por
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <input class="dropdown-item" type="text" name="ppu" placeholder="PPU">
+          <input class="dropdown-item" type="text" name="modelo" placeholder="Modelo">
+          <input class="dropdown-item" type="text" name="año" placeholder="Año">
+          <input class="dropdown-item" type="text" name="kilometraje" placeholder="Kilometraje">
+          <input class="dropdown-item" type="text" name="estado" placeholder="Estado">
+          <input class="dropdown-item" type="text" name="vin" placeholder="VIN">
+          <input class="dropdown-item" type="text" name="flota" placeholder="Flota">
+        </div>
+      </div>
+      <br>
+      <input type="submit" value="Filtrar">
+      <button type="button" onclick="window.location.href=window.location.pathname;">Limpiar Filtro</button>
+    </form>
+    
+  
+  
     <!-- Estilo para la tabla -->
     <table class="table">
       <thead>
