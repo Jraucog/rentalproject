@@ -38,3 +38,16 @@ class Camion(models.Model):
 
     def __str__(self):
         return self.modelo
+    
+class Mantenimiento(models.Model):
+    TIPO_CHOICES = [
+        ('Correctivo', 'Correctivo'),
+        ('Preventivo', 'Preventivo'),
+    ]
+    camion = models.ForeignKey(Camion, on_delete=models.CASCADE)
+    tipo = models.CharField(max_length=50, choices=TIPO_CHOICES, default='Correctivo')
+    fecha = models.DateField(auto_now_add=True) # <-- Se agrega auto_now_add=True
+    descripcion = models.TextField()
+
+    def __str__(self):
+        return f'{self.camion} - {self.tipo}'

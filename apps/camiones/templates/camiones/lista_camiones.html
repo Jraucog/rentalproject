@@ -38,10 +38,24 @@
             <td>{{ camion.vin }}</td>
             <td>{{ camion.flota }}</td>
             <td>
-              <!-- Estilo para los enlaces de detalles y editar -->
-              <a href="{% url 'detalles_camion' camion.id %}" class="btn custom-btn">Detalles</a>
-              <a href="{% url 'editar_camion' camion.id %}" class="btn btn-warning">Editar</a>
-            </td>
+              <!-- Botón de Opciones -->
+              <div class="dropdown">
+                  <button class="btn custom-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Opciones
+                  </button>
+                
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <!-- Enlace a Programar Mantenimiento -->
+                    <a class="dropdown-item" href="{% url 'programar_mantenimiento' camion.id %}">Generar Mantenimiento</a>
+                    <!-- Enlace a Detalles -->
+                    <a class="dropdown-item" href="{% url 'detalles_camion' camion.id %}">Detalles Equipo</a>
+                    <!-- Enlace a Editar -->
+                    <a class="dropdown-item" href="{% url 'editar_camion' camion.id %}">Editar Datos de Equipo</a>
+                  </div>
+              </div>
+          </td>
+          
+          
           </tr>
         {% endfor %}
       </tbody>

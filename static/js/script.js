@@ -1,8 +1,8 @@
 // Obtiene el interruptor de modo oscuro
-var darkModeSwitch = document.getElementById('darkModeSwitch');
+const darkModeSwitch = document.getElementById('darkModeSwitch');
 
 // Al cargar la página, verifica si hay una preferencia almacenada en localStorage
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('darkMode') === 'enabled') {
     enableDarkMode();
   }
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Añade un evento 'change' al interruptor
 darkModeSwitch.addEventListener('change', function () {
   // Obtiene la etiqueta asociada al interruptor
-  var switchLabel = this.nextElementSibling;
+  const switchLabel = this.nextElementSibling;
 
   // Comprueba si el interruptor está activado
   if (this.checked) {
@@ -40,14 +40,15 @@ function enableDarkMode() {
 function disableDarkMode() {
   document.body.classList.remove('dark-mode');
 }
+
 // scripts.js
 function toggleDetails(section) {
-  var details = document.getElementById('details-' + section);
+  const details = document.getElementById(`details-${section}`);
   details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
 }
 
-var headers = document.getElementsByClassName('details-header');
-for (var i = 0; i < headers.length; i++) {
+const headers = document.getElementsByClassName('details-header');
+for (let i = 0; i < headers.length; i++) {
   headers[i].addEventListener('mouseover', function() {
     this.style.backgroundColor = "#f2f2f2";
   });

@@ -4,11 +4,15 @@
   --secondary-color: #54565A;
   --text-color: #FFFEFEFE;
   --background-color: #FFFEFEFE;
+  --dark-mode-primary-color: #333;
+  --dark-mode-secondary-color: #555;
+  --dark-mode-text-color: #FFFEFEFE;
+  --dark-mode-background-color: #111;
 }
 
 /* Estilos generales del cuerpo de la página */
 body {
-  background-color: var(--background-color); /* Utiliza la variable definida en :root */
+  background-color: var(--background-color);
 }
 
 /* Estilos para el logo en la barra de navegación */
@@ -53,64 +57,59 @@ body {
 
 /* Define los estilos para el modo oscuro */
 .dark-mode {
-  --primary-color: #333;
-  --secondary-color: #555;
-  --text-color: #FFFEFEFE;
-  --background-color: #111;
+  --primary-color: var(--dark-mode-primary-color);
+  --secondary-color: var(--dark-mode-secondary-color);
+  --text-color: var(--dark-mode-text-color);
+  --background-color: var(--dark-mode-background-color);
 }
 
 /* Personaliza el interruptor de modo oscuro */
 .form-check.form-switch {
-  margin-left: 10px; /* Ajusta el margen izquierdo según sea necesario */
+  margin-left: 10px;
 }
 
 .form-check.form-switch label {
-  color: var(--text-color) !important; /* Usa el color de texto original para que coincida con el resto de la barra de navegación */
+  color: var(--text-color);
 }
 
 .form-check.form-switch input:checked + label::before {
-  background-color: var(--primary-color) !important; /* Usa el color primario cuando el interruptor esté activado */
-  border-color: var(--primary-color) !important; /* Cambia el color del borde cuando el interruptor esté activado */
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
-/* Asegúrate de que el fondo del switch se coloree correctamente cuando está activado */
 .form-check.form-switch input:checked + label::after {
-  background-color: var(--primary-color) !important;
+  background-color: var(--primary-color);
 }
 
 /* Estilos para el contenido del footer */
 .footer {
-  background-color: var(--primary-color); /* Color de fondo del footer */
-  color: var(--text-color); /* Color del texto en el footer */
-  padding: 20px 0; /* Ajusta el relleno según tus necesidades */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px 0;
   text-align: center;
-  position: fixed; /* Posición fija para que se mantenga en la parte inferior */
+  position: fixed;
   width: 100%;
-  bottom: 0; /* Ancla el footer en la parte inferior de la página */
+  bottom: 0;
 }
 
 /* Estilos generales para h2 */
 h2 {
-  color: var(--text-color);
-}
-
-/* Estilos específicos para h2 en modo oscuro */
-.dark-mode h2 {
-  color: var(--text-color); /* Puedes definir un color diferente para modo oscuro */
+  color: var(--secondary-color); /* Cambia a un color oscuro */
 }
 
 /* Estilos para el botón personalizado */
 .custom-btn {
   background-color: var(--primary-color);
-  color: #FFFEFEFE !important; /* Establece el color directamente */
+  color: var(--text-color);
 }
+
 /* styles.css */
 .details-header {
   cursor: pointer;
 }
 
 .details-header:hover {
-  background-color: #e6e6e6;
+  background-color: var(--secondary-color);
 }
 
 .toggle-details {
