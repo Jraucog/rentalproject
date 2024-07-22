@@ -1,0 +1,27 @@
+<!-- catalogo/catalogo.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <div class="row">
+        {% for camion in camiones %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{% if camion.imagen %}{{ camion.imagen.url }}{% else %}https://via.placeholder.com/300x200.png?text=Imagen+no+disponible{% endif %}" alt="{{ camion.modelo }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ camion.marca }} - {{ camion.modelo }}</h5>
+                    <p class="card-text">Año: {{ camion.año }}</p>
+                    <p class="card-text">Estado: {{ camion.estado }}</p>
+                    <p class="card-text">Descripción: {{ camion.descripcion }}</p>
+                    <p class="card-text">Precio: ${{ camion.precio }}</p>
+                    <!-- Agregar más detalles según sea necesario -->
+                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

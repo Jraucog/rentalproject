@@ -32,9 +32,8 @@ INSTALLED_APPS = [
     #mis_apps
     'apps.repuestos',
     'apps.camiones',
-    'apps.home'
-    #'apps.catalogo'
-
+    'apps.home',
+    'apps.catalogo'
 ]
 
 MIDDLEWARE = [
