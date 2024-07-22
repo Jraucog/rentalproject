@@ -1,0 +1,69 @@
+<!-- detalles_camion.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Detalles del Equipo - {{ camion.modelo }}
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'lista_camiones' %}" class="btn custom-btn">Volver a la lista de camiones</a>
+
+<div>
+  <h2 onmouseover="highlightText(this)" onmouseout="unhighlightText(this)" onclick="toggleDetails('camion')">Detalles del Camión <span class="toggle-details"></span></h2>
+  <ul id="details-camion" style="display: none;">
+    <li><strong>PPU:</strong> {{ camion.ppu }}</li>
+    <li><strong>Modelo:</strong> {{ camion.modelo }}</li>
+    <li><strong>Año:</strong> {{ camion.año }}</li>
+    <li><strong>Kilometraje:</strong> {{ camion.kilometraje }}</li>
+    <li><strong>Estado:</strong> {{ camion.estado }}</li>
+    <li><strong>VIN:</strong> {{ camion.vin }}</li>
+    <li><strong>Flota:</strong> {{ camion.flota }}</li>
+  <a href="{% url 'editar_camion' camion.id %}" class="btn btn-warning">Editar</a>
+
+  </ul>
+
+</div>
+
+<div>
+  <h2 onmouseover="highlightText(this)" onmouseout="unhighlightText(this)" onclick="toggleDetails('equipo')">Detalles del Equipo <span class="toggle-details"></span></h2>
+  <ul id="details-equipo" style="display: none;">
+    <li><strong>PPU:</strong> {{ camion.ppu }}</li>
+    <li><strong>Modelo:</strong> {{ camion.modelo }}</li>
+    <li><strong>Año:</strong> {{ camion.año }}</li>
+    <li><strong>Kilometraje:</strong> {{ camion.kilometraje }}</li>
+    <li><strong>Estado:</strong> {{ camion.estado }}</li>
+    <li><strong>VIN:</strong> {{ camion.vin }}</li>
+    <li><strong>Flota:</strong> {{ camion.flota }}</li>
+  <a href="{% url 'editar_camion' camion.id %}" class="btn btn-warning">Editar</a>
+
+  </ul>
+
+</div>
+
+<style>
+  h2:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+
+  .toggle-details {
+    margin-left: 10px;
+  }
+</style>
+
+<script>
+  function toggleDetails(section) {
+    var details = document.getElementById('details-' + section);
+    details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
+  }
+
+  function highlightText(element) {
+    element.style.backgroundColor = "#f2f2f2";
+  }
+
+  function unhighlightText(element) {
+    element.style.backgroundColor = "";
+  }
+</script>
+
+{% endblock %}

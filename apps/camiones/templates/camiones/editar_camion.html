@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Editar {{ camion.modelo }}
+{% endblock %}
+
+{% block content %}
+  <div class="container my-4">
+    <h2 class="mb-4">Editar Datos del Camión</h2>
+    
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      <!-- Estilo para el formulario -->
+      <div class="mb-3">
+        {{ form.as_p }}
+      </div>
+      
+      <!-- Estilo para el botón de guardar cambios -->
+      <button type="submit" class="btn custom-btn">Guardar cambios</button>
+    </form>
+    
+    <!-- Estilo para el enlace de cancelar -->
+    <a href="{% url 'lista_camiones' %}" class="btn btn-secondary mt-3">Cancelar</a>
+  </div>
+{% endblock %}

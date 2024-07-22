@@ -1,0 +1,117 @@
+/* Define tus colores como variables CSS para un fácil mantenimiento */
+:root {
+  --primary-color: #00A8E2;
+  --secondary-color: #54565A;
+  --text-color: #FFFEFEFE;
+  --background-color: #FFFEFEFE;
+  --dark-mode-primary-color: #333;
+  --dark-mode-secondary-color: #555;
+  --dark-mode-text-color: #FFFEFEFE;
+  --dark-mode-background-color: #111;
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+  background-color: var(--background-color);
+}
+
+/* Estilos para el logo en la barra de navegación */
+.navbar-brand {
+  text-align: left;
+}
+
+#logo {
+  max-height: 80px;
+}
+
+/* Personalización de la barra de navegación */
+.navbar-custom {
+  background-color: var(--primary-color);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--text-color);
+}
+
+.navbar-custom .navbar-nav .active>.nav-link,
+.navbar-custom .navbar-nav .nav-link.active,
+.navbar-custom .navbar-nav .nav-link.show,
+.navbar-custom .navbar-nav .show>.nav-link {
+  color: rgba(255, 255, 255, .9);
+}
+
+/* Asegúrate de que el menú de navegación se expande correctamente en pantallas pequeñas */
+.offcanvas-collapse {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .offcanvas-collapse {
+    width: calc(100% - 3.5em);
+  }
+}
+
+/* Define los estilos para el modo oscuro */
+.dark-mode {
+  --primary-color: var(--dark-mode-primary-color);
+  --secondary-color: var(--dark-mode-secondary-color);
+  --text-color: var(--dark-mode-text-color);
+  --background-color: var(--dark-mode-background-color);
+}
+
+/* Personaliza el interruptor de modo oscuro */
+.form-check.form-switch {
+  margin-left: 10px;
+}
+
+.form-check.form-switch label {
+  color: var(--text-color);
+}
+
+.form-check.form-switch input:checked + label::before {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-check.form-switch input:checked + label::after {
+  background-color: var(--primary-color);
+}
+
+/* Estilos para el contenido del footer */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Estilos generales para h2 */
+h2 {
+  color: var(--secondary-color); /* Cambia a un color oscuro */
+}
+
+/* Estilos para el botón personalizado */
+.custom-btn {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* styles.css */
+.details-header {
+  cursor: pointer;
+}
+
+.details-header:hover {
+  background-color: var(--secondary-color);
+}
+
+.toggle-details {
+  margin-left: 10px;
+}
